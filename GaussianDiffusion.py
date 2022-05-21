@@ -5,7 +5,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 nx = 31
 ny = 31
-nt = 17
+# nt = 17
 nu = .05
 dx = 2 / (nx - 1)
 dy = 2 / (ny - 1)
@@ -34,7 +34,7 @@ ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
 
 def diffuse(nt):
-    u[int(.5 / dy):int(1 / dy + 1),int(.5 / dx):int(1 / dx + 1)] = 2  
+    u[int(.5 / dy):int(1 / dy + 1),int(.5 / dx):int(1 / dx + 1)] = 2
     #初场定义
     
     for n in range(nt + 1): 
@@ -49,14 +49,15 @@ def diffuse(nt):
         u[-1, :] = 1
         u[:, 0] = 1
         u[:, -1] = 1
-        #边界条件
+
+    # draw
     fig = plt.figure()
     ax = fig.gca(projection='3d')
     surf = ax.plot_surface(X, Y, u[:], rstride=1, cstride=1, cmap=cm.viridis,
        linewidth=0, antialiased=True)
     ax.set_zlim(1, 2.5)
     ax.set_xlabel('$x$')
-    ax.set_ylabel('$y$');#计算完成后绘制u的分布
+    ax.set_ylabel('$y$')
 
-diffuse(10)
+diffuse(100)
 plt.show()
