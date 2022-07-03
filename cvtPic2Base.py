@@ -1,5 +1,5 @@
 import base64
-f=open('D:\Study\PHD4\ASD\ASD\Doc\Learning Visual Attention.png','rb') #二进制方式打开图文件
+f=open('EidFp.png','rb') #二进制方式打开图文件
 ls_f=base64.b64encode(f.read()) #读取文件内容，转换为base64编码
 f.close()
 # print(ls_f)
@@ -16,5 +16,6 @@ f.close()
 # file.write(imgdata)
 # file.close()
 
+# MarkDown 中的用法
 # ![avatar][base64str]
 # [base64str]:data:image/png;base64,iVBO...
