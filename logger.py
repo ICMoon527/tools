@@ -28,3 +28,8 @@ def setup_logger(name, save_dir, distributed_rank, filename="log.txt", mode='w')
         logger.addHandler(fh)
 
     return logger
+
+'''
+logger = setup_logger("maskrcnn_benchmark", save_dir, get_rank())
+logger.info("Using {} GPUs".format(num_gpus))
+'''
