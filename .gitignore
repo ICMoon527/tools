@@ -2,4 +2,4 @@
 .git/
 .vscode/
 
-test.py
+test*
